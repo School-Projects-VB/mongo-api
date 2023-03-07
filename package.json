@@ -1,11 +1,11 @@
 {
   "name": "test-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "⚙️ MongoDB API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +14,18 @@
     "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-swagger-generator": "^1.1.17",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.1.0",
+    "mongoose": "^7.0.1",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbetsch/mongo-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vbetsch/mongo-api/issues"
+  },
+  "homepage": "https://github.com/vbetsch/mongo-api#readme"
 }
