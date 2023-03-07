@@ -1,3 +1,9 @@
+# Jetbrains folder
 .idea
+.idea/httpRequests/
+
+# NodeJS
 node_modules
+
+# Environment files
 .env
