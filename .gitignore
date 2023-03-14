@@ -1,6 +1,6 @@
 # Jetbrains folder
 .idea
-.idea/httpRequests/
+.idea/httpRequests
 
 # NodeJS
 node_modules
