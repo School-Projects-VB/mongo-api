@@ -1,9 +1,7 @@
-SHELL := /bin/bash
+node_modules:
+	npm install
 
-run:
+run: node_modules
 	npm start
 
-test:
-	curl -i 'http://localhost:3000/users' -H "Accept: application/json" 
-
-.PHONY: start, test
+.PHONY: start
