@@ -14,15 +14,16 @@ server.use('/', ArticleRouter);
 server.use('/', CommentRouter);
 
 const expressSwagger = require('express-swagger-generator') (server);
+const url = `http://${process.env.HOST}:${process.env.PORT}`;
 
 let options = {
     swaggerDefinition : {
         info: {
             description: "Lessons API on MongoDB",
             title: "Lessons",
-            version: '1.0.0'
+            version: '2.0.0'
         },
-        host: `http://localhost:${process.env.PORT}`,
+        host: url,
         basePath: '/',
         produces: ["application/json"],
         schemes: ['http', 'https']
@@ -32,8 +33,7 @@ let options = {
 }
 
 expressSwagger(options)
-// http://localhost:3000/api-docs
 
 server.listen(process.env.PORT, ()=> {
-    console.log(`http://localhost:${process.env.PORT}`)
+    console.log(url)
 })
