@@ -6,8 +6,12 @@ server.use(express.json());
 
 // Import routers
 const UserRouter = require('./app/routes/UserRouter');
+const ArticleRouter = require('./app/routes/ArticleRouter');
+const CommentRouter = require('./app/routes/CommentRouter');
 
 server.use('/', UserRouter);
+server.use('/', ArticleRouter);
+server.use('/', CommentRouter);
 
 const expressSwagger = require('express-swagger-generator') (server);
 

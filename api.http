@@ -7,6 +7,7 @@ Content-Type: application/json
   "password": "123"
 }
 
+
 ### Login
 POST http://localhost:3000/login
 Content-Type: application/json
@@ -16,6 +17,64 @@ Content-Type: application/json
   "password": "123"
 }
 
+
 ### Signout
 GET http://localhost:3000/logout
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MDc2YWQ3OWU2YjIxODdhYjlhZjlhYiIsImVtYWlsIjoidGVzdDFAbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMiRVNTloUzlCWEQ2NjFvYzN2cFFYbDN1NXBoL3RQRWJsRmd2ZTRBekhENlcuVWhPRTFoUFlUaSIsIl9fdiI6MH0sImlhdCI6MTY3ODIwODA4MSwiZXhwIjoxNjc4MjExNjgxfQ.QomBmui0UyKQUNDnWQHpzUvmuU2Zzf75WG5FSj5Kcmo
+
+
+
+### Add one article
+POST http://localhost:3000/article
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MDc2YWQ3OWU2YjIxODdhYjlhZjlhYiIsImVtYWlsIjoidGVzdDFAbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMiRVNTloUzlCWEQ2NjFvYzN2cFFYbDN1NXBoL3RQRWJsRmd2ZTRBekhENlcuVWhPRTFoUFlUaSIsIl9fdiI6MH0sImlhdCI6MTY3ODgwMzIxMiwiZXhwIjoxNjc4ODA2ODEyfQ.xC_rZ3DNCa2sMacHuwxZzUxmXF1FcvdMw10JFmjHSLI
+
+{
+  "title": "le meilleur article",
+  "content": "best article",
+  "category": "sport"
+}
+
+
+### Get all articles
+GET http://localhost:3000/article
+Content-Type: application/json
+
+
+### Update article
+PUT http://localhost:3000/article/6410811eeb7ba6ae19e4f306
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MDc2YWQ3OWU2YjIxODdhYjlhZjlhYiIsImVtYWlsIjoidGVzdDFAbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMiRVNTloUzlCWEQ2NjFvYzN2cFFYbDN1NXBoL3RQRWJsRmd2ZTRBekhENlcuVWhPRTFoUFlUaSIsIl9fdiI6MH0sImlhdCI6MTY3ODgwMzIxMiwiZXhwIjoxNjc4ODA2ODEyfQ.xC_rZ3DNCa2sMacHuwxZzUxmXF1FcvdMw10JFmjHSLI
+
+{
+  "title": "le meilleur article modified",
+  "content": "best article modified",
+  "category": "sport"
+}
+
+
+### Delete article
+DELETE http://localhost:3000/article/6410811eeb7ba6ae19e4f306
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MDc2YWQ3OWU2YjIxODdhYjlhZjlhYiIsImVtYWlsIjoidGVzdDFAbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMiRVNTloUzlCWEQ2NjFvYzN2cFFYbDN1NXBoL3RQRWJsRmd2ZTRBekhENlcuVWhPRTFoUFlUaSIsIl9fdiI6MH0sImlhdCI6MTY3ODgwMzIxMiwiZXhwIjoxNjc4ODA2ODEyfQ.xC_rZ3DNCa2sMacHuwxZzUxmXF1FcvdMw10JFmjHSLI
+
+
+### Get article by category
+GET http://localhost:3000/article/sport
+Content-Type: application/json
+
+
+### Search article
+GET http://localhost:3000/search/article?query=article
+Content-Type: application/json
+
+
+
+### Post comment
+POST http://localhost:3000/comment/6410895f7e5a41aca6b84183
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MDc2YWQ3OWU2YjIxODdhYjlhZjlhYiIsImVtYWlsIjoidGVzdDFAbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMiRVNTloUzlCWEQ2NjFvYzN2cFFYbDN1NXBoL3RQRWJsRmd2ZTRBekhENlcuVWhPRTFoUFlUaSIsIl9fdiI6MH0sImlhdCI6MTY3ODgwMzIxMiwiZXhwIjoxNjc4ODA2ODEyfQ.xC_rZ3DNCa2sMacHuwxZzUxmXF1FcvdMw10JFmjHSLI
+
+{
+  "content": "best comment"
+}

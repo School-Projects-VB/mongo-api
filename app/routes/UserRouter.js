@@ -3,7 +3,6 @@ const router = express.Router();
 
 const UserController = require('../controllers/UserController');
 const checkJwt = require('../../middlewares/checkJwt');
-const User = require('../models/UserModel');
 
 /**
  * Signin route
