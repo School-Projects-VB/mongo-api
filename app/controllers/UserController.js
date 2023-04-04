@@ -65,6 +65,7 @@ async function logIn(req, res) {
     }
 }
 
+// Logout
 async function logOut(req, res) {
     try {
         req.payload.exp = Math.floor(Date.now()/1000) - (60*60);

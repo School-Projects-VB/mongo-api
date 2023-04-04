@@ -3,6 +3,7 @@ const router = express.Router();
 
 const ArticleController = require('../controllers/ArticleController');
 const checkJwt = require('../../middlewares/checkJwt');
+const {cache, flush} = require('../../middlewares/cache');
 
 /**
  * Add one article
@@ -13,7 +14,7 @@ const checkJwt = require('../../middlewares/checkJwt');
  * @return {String} 200 - Added with success
  * @returns {String} 500 - An error message
  */
-router.post('/article', checkJwt, ArticleController.addArticle);
+router.post('/article', checkJwt, flush, ArticleController.addArticle);
 
 /**
  * Get all articles
@@ -23,7 +24,7 @@ router.post('/article', checkJwt, ArticleController.addArticle);
  * @return {String} 200 - Success
  * @returns {String} 500 - An error message
  */
-router.get('/article', ArticleController.getAllArticles);
+router.get('/article', cache, ArticleController.getAllArticles);
 
 /**
  * Update article
@@ -34,7 +35,7 @@ router.get('/article', ArticleController.getAllArticles);
  * @return {String} 200 - Updated with success
  * @returns {String} 500 - An error message
  */
-router.put('/article/:id', checkJwt, ArticleController.updateArticle);
+router.put('/article/:id', checkJwt, flush, ArticleController.updateArticle);
 
 /**
  * Delete article
@@ -45,7 +46,7 @@ router.put('/article/:id', checkJwt, ArticleController.updateArticle);
  * @return {String} 200 - Deleted with success
  * @returns {String} 500 - An error message
  */
-router.delete('/article/:id', checkJwt, ArticleController.deleteArticle);
+router.delete('/article/:id', checkJwt, flush, ArticleController.deleteArticle);
 
 /**
  * Get all articles by category

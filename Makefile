@@ -4,4 +4,4 @@ node_modules:
 run: node_modules
 	npm start
 
-.PHONY: start
+.PHONY: run
